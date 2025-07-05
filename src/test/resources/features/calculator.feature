@@ -1,7 +1,7 @@
 Feature: Calculator Application Testing
-  As a user
-  I want to perform calculations
-  So that I can solve math problems
+#  As a user
+#  I want to perform calculations
+#  So that I can solve math problems
 
   @smoke @calculator
   Scenario: Simple addition

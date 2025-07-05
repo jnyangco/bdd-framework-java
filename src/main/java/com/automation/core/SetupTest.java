@@ -9,12 +9,14 @@ public class SetupTest {
         String browser = "chrome";
         String message = switch (browser) {
             case "chrome" -> "Chrome browser selected";
+            case "firefox" -> "Firefox browser selected";
+            case "edge" -> "Edge browser selected";
             case "safari" -> "Safari browser selected";
             default -> "Unknown browser";
         };
         
         System.out.println(message);
         System.out.println("✅ Java 21 features working!");
-        System.out.println("✅ Eclipse setup successful!");
+        System.out.println("✅ IntelliJ setup successful!");
     }
 }

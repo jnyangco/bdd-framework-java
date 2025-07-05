@@ -6,14 +6,16 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/features",
-    glue = {"com.automation.stepdefinitions", "com.automation.hooks"},
-    plugin = {
-        "pretty",
-        "json:target/reports/cucumber.json"
-    },
-    monochrome = true
+        features = "src/test/resources/features",
+        glue = {"com.automation.stepdefinitions", "com.automation.hooks"},
+        plugin = {
+                "pretty",                                    // Console output
+                "html:target/cucumber-reports",              // HTML reports (ADD THIS)
+                "json:target/reports/cucumber.json",         // JSON data (your current)
+                "rerun:target/rerun.txt"                     // Creates file with failed scenarios
+        },
+        monochrome = true
 )
 public class TestRunner {
-    // Minimal configuration - just get it working first
+    // Enhanced with HTML reports for easy viewing
 }

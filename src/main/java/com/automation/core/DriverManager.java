@@ -3,6 +3,8 @@ package com.automation.core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
@@ -19,6 +21,12 @@ public class DriverManager {
                     options.addArguments("--disable-dev-shm-usage");
                     options.addArguments("--no-sandbox");
                     driver = new ChromeDriver(options);
+                }
+                case "firefox" -> {
+                    driver = new FirefoxDriver();
+                }
+                case "edge" -> {
+                    driver = new EdgeDriver();
                 }
                 case "safari" -> {
                     driver = new SafariDriver();

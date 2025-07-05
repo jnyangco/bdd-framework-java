@@ -102,12 +102,23 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>BDD Framework Java</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
+                            <projectName>bdd-framework-java</projectName>
+                            <!-- Output directory for the beautiful reports -->
+                            <outputDirectory>${project.build.directory}/advanced-reports</outputDirectory>
+                            <!-- Input directory - look in the entire target folder -->
+                            <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
+                                <!-- Look for JSON files anywhere in target directory -->
                                 <param>**/*.json</param>
+                                <param>**/cucumber*.json</param>
+                                <param>**/Cucumber.json</param>
                             </jsonFiles>
+                            <mergeFeaturesById>false</mergeFeaturesById>
+                            <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
+                            <!-- Don't fail if no JSON files found -->
+                            <checkBuildResult>false</checkBuildResult>
+                            <!-- Skip if no JSON files exist -->
+                            <skipEmptyJSONFiles>true</skipEmptyJSONFiles>
                         </configuration>
                     </execution>
                 </executions>

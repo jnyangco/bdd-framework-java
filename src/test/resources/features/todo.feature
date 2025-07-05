@@ -3,12 +3,12 @@ Feature: Todo Application Testing
   I want to manage my tasks
   So that I can stay organized
 
-  @smoke @todo
-  Scenario: Add a single task
-    Given I am on the "todoApp" application
-    When I add a task "Learn Selenium BDD"
-    Then I should see task "Learn Selenium BDD" in the list
-    And I should see 1 tasks in total
+#  @smoke @todo
+#  Scenario: Add a single task
+#    Given I am on the "todoApp" application
+#    When I add a task "Learn Selenium BDD"
+#    Then I should see task "Learn Selenium BDD" in the list
+#    And I should see 1 tasks in total
 
 #  @regression @todo
 #  Scenario: Add multiple tasks

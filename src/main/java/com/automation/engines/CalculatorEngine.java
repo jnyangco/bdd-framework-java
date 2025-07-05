@@ -6,6 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class CalculatorEngine {
     private WebDriver driver;
+
+    // ELEMENTS DECLARATION
+    private static final By EQUALS_BUTTON = By.xpath("//span[text()='=']");
+    private static final By RESULT = By.id("sciOutPut");
+
+
+
+
     
     public CalculatorEngine(WebDriver driver) {
         this.driver = driver;

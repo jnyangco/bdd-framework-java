@@ -1,4 +1,3 @@
-
 # Command Line Run:
 
 # run using tags
@@ -11,7 +10,6 @@ mvn test -Dcucumber.filter.tags="@calculator"
 # run with specific browser
 mvn test -Dcucumber.filter.tags="@calculator" -Dbrowser=chrome
 
-
 # TEST RUNNER FILE
 mvn clean test -Dtest=TestRunner
 
@@ -19,9 +17,44 @@ mvn clean test -Dtest=TestRunner
 cat target/rerun.txt
 mvn test -Dtest=FailedTestsRunner
 
-
 # OPEN REPORT
 open target/advanced-reports/cucumber-html-reports/overview-features.html
+
+
+# =============================================================================
+# =============================================================================
+
+### Generate Allure reports:
+```bash
+# Run tests (generates allure-results data)
+mvn clean test
+
+# Generate and serve Allure report
+allure serve target/allure-results
+```
+
+### Alternative - Generate static report:
+```bash
+# Run tests
+mvn clean test
+
+# Generate report to specific folder
+allure generate target/allure-results --output target/allure-report
+
+# Open the report
+open target/allure-report/index.html
+```
+
+### With your existing advanced reports:
+```bash
+# Get BOTH reports - your current + Allure
+mvn clean test verify
+
+# View your current advanced report
+open target/advanced-reports/cucumber-html-reports/overview-features.html
+
+# View Allure report
+allure serve target/allure-results
 
 
 

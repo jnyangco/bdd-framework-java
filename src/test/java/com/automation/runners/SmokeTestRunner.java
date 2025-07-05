@@ -13,10 +13,11 @@ import io.cucumber.junit.CucumberOptions;
                 "pretty",
                 "html:target/smoke-reports",
                 "json:target/smoke-reports/smoke-results.json",
-                "junit:target/smoke-reports/smoke-results.xml"
+                "junit:target/smoke-reports/smoke-results.xml",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
         },
-        monochrome = true,
-        publish = false
+        monochrome = true
+        // publish = false
 )
 public class SmokeTestRunner {
     // Runs only smoke tests across all applications

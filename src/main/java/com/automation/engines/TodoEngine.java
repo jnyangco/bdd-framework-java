@@ -7,6 +7,14 @@ import org.openqa.selenium.Keys;
 
 public class TodoEngine {
     private WebDriver driver;
+
+    // ELEMENTS DECLARATION
+    private static final By NEW_TODO = By.className("new-todo");
+    private static final By TASK_COUNT = By.xpath("//ul[@class='todo-list']/li");
+
+
+
+
     
     public TodoEngine(WebDriver driver) {
         this.driver = driver;

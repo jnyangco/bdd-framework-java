@@ -17,8 +17,28 @@ mvn clean test -Dtest=TestRunner
 cat target/rerun.txt
 mvn test -Dtest=FailedTestsRunner
 
-# OPEN REPORT
+# =============================================================================
+# RUN + OPEN REPORT (CUCUMBER)
 open target/advanced-reports/cucumber-html-reports/overview-features.html
+mvn clean test verify -Dcucumber.filter.tags="@todo" -Dparallel=all -DthreadCount=4  && open target/cucumber-html-reports/overview-features.html
+
+# RUN + OPEN REPORT (ALLURE)
+mvn clean test -Dcucumber.filter.tags="@todo" -Dparallel=all -DthreadCount=4 && allure serve target/allure-results
+
+
+
+# =============================================================================
+# =============================================================================
+# Run tests and immediately view Allure report
+mvn clean test && allure serve target/allure-results
+
+# Run specific tests with Allure
+mvn clean test -Dcucumber.filter.tags="@smoke" && allure serve target/allure-results
+
+# Get all three reports at once
+mvn clean test verify && allure serve target/allure-results
+
+
 
 
 # =============================================================================

@@ -12,8 +12,8 @@ import io.cucumber.junit.CucumberOptions;
                 "pretty",
                 "html:target/calculator-reports",
                 "json:target/calculator-reports/calculator-results.json",
-                "junit:target/calculator-reports/calculator-results.xml",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
+                "junit:target/calculator-reports/calculator-results.xml"
+                // "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
 
         },
         monochrome = true

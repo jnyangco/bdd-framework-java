@@ -12,8 +12,8 @@ import io.cucumber.junit.CucumberOptions;
                 "pretty",                                           // Console output
                 "html:target/cucumber-reports",                     // HTML reports (ADD THIS)
                 "json:target/reports/cucumber.json",                // JSON data (your current)
-                "rerun:target/rerun.txt",                           // Creates file with failed scenarios
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
+                "rerun:target/rerun.txt"                           // Creates file with failed scenarios
+                // "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
         },
         monochrome = true
 )

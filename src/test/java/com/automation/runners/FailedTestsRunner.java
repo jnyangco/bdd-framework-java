@@ -12,8 +12,8 @@ import io.cucumber.junit.CucumberOptions;
                 "pretty",                                        // Console output
                 "html:target/rerun-html-reports",                // HTML in different folder
                 "json:target/rerun-json/results.json",           // JSON in separate folder
-                "junit:target/rerun-xml/results.xml",             // XML in separate folder
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
+                "junit:target/rerun-xml/results.xml"             // XML in separate folder
+                // "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
         },
         monochrome = true
 )

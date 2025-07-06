@@ -12,6 +12,8 @@ mvn test -Dcucumber.filter.tags="@calculator" -Dbrowser=chrome
 
 # TEST RUNNER FILE
 mvn clean test -Dtest=TestRunner
+or
+mvn clean test verify -Dtest=TestRunner
 
 # Check rerun file is created or not -> remove "clean" in mvn test (since rerun.txt will be deleted)
 cat target/rerun.txt

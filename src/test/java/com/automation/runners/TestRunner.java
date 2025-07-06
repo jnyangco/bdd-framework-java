@@ -8,6 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com.automation.stepdefinitions", "com.automation.hooks"},
+
         plugin = {
                 "pretty",                                           // Console output
                 "html:target/cucumber-reports",                     // HTML reports (ADD THIS)

@@ -23,6 +23,9 @@ mvn test -Dtest=FailedTestsRunner
 open target/advanced-reports/cucumber-html-reports/overview-features.html
 
 
+# PARALLEL TEST
+mvn clean test verify -Dparallel=all -DthreadCount=4 && open target/advanced-reports/cucumber-html-reports/overview-features.html
+mvn clean test verify -Dcucumber.filter.tags="@calculator" -Dparallel=all -DthreadCount=4 && open target/advanced-reports/cucumber-html-reports/overview-features.html
 # =============================================================================
 # =============================================================================
 

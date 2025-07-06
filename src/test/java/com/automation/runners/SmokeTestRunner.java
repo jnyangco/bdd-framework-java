@@ -11,9 +11,9 @@ import io.cucumber.junit.CucumberOptions;
         tags = "@smoke",
         plugin = {
                 "pretty",
-                "html:target/smoke-reports",
-                "json:target/smoke-reports/smoke-results.json",
-                "junit:target/smoke-reports/smoke-results.xml"
+                "html:target/cucumber-reports",
+                "json:target/reports/cucumber.json",
+                "rerun:target/rerun.txt"
                 // "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // Allure Report
         },
         monochrome = true

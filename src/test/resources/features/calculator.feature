@@ -12,3 +12,11 @@ Feature: Calculator Application Testing
   @smoke @calculator
   Scenario: Simple addition2
     Given I am on the "calculatorApp" application
+
+  @smoke @calculator
+  Scenario: Simple addition3
+    Given I am on the "calculatorApp" application
+
+  @smoke @calculator
+  Scenario: Simple addition4
+    Given I am on the "calculatorApp" application

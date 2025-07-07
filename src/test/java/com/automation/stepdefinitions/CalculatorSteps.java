@@ -8,37 +8,39 @@ import com.automation.core.DriverManager;
 import com.automation.engines.CalculatorEngine;
 
 public class CalculatorSteps {
-    private WebDriver driver;
-    private CalculatorEngine calculatorEngine;
-    
+
     @When("I perform calculation {string}")
     public void performCalculation(String expression) {
-        driver = DriverManager.getDriver("chrome");
-        calculatorEngine = new CalculatorEngine(driver);
+        WebDriver driver = DriverManager.getDriver();
+        CalculatorEngine calculatorEngine = new CalculatorEngine(driver);
         calculatorEngine.calculate(expression);
     }
-    
+
     @When("I click number {string}")
     public void clickNumber(String number) {
-        if (calculatorEngine == null) {
-            driver = DriverManager.getDriver("chrome");
-            calculatorEngine = new CalculatorEngine(driver);
-        }
+        WebDriver driver = DriverManager.getDriver();
+        CalculatorEngine calculatorEngine = new CalculatorEngine(driver);
         calculatorEngine.clickNumber(number);
     }
-    
+
     @When("I click operator {string}")
     public void clickOperator(String operator) {
+        WebDriver driver = DriverManager.getDriver();
+        CalculatorEngine calculatorEngine = new CalculatorEngine(driver);
         calculatorEngine.clickOperator(operator);
     }
-    
+
     @When("I click equals")
     public void clickEquals() {
+        WebDriver driver = DriverManager.getDriver();
+        CalculatorEngine calculatorEngine = new CalculatorEngine(driver);
         calculatorEngine.clickEquals();
     }
-    
+
     @Then("I should see result {string}")
     public void verifyResult(String expectedResult) {
+        WebDriver driver = DriverManager.getDriver();
+        CalculatorEngine calculatorEngine = new CalculatorEngine(driver);
         String actualResult = calculatorEngine.getResult();
         Assert.assertEquals("Calculation result mismatch", expectedResult, actualResult);
     }

@@ -1,5 +1,40 @@
 # Command Line Run:
 
+# Basic parallel execution (uses defaults)
+mvn clean test verify -Dcucumber.filter.tags="@smoke" -Dparallel=methods -DthreadCount=2
+mvn clean test verify -Dcucumber.filter.tags="@smoke" -Dparallel=methods -DthreadCount=2 -Dheadless=true
+
+# OPEN REPORT
+open target/advanced-reports/cucumber-html-reports/overview-features.html
+
+
+# Check what failed
+cat target/rerun.txt
+
+# Manually rerun failed tests if desired
+mvn test -Dtest=FailedTestsRunner
+
+
+# PROFILE run - check pom.xml
+mvn clean test verify -Pdev-mode -Dcucumber.filter.tags="@smoke"
+mvn clean test verify -Ptest-focus -Dcucumber.filter.tags="@smoke"
+mvn clean test verify -Pdebug -Dcucumber.filter.tags="@smoke"
+
+
+# =============================================================================
+# Override browser
+mvn test -Dbrowser=safari -Dcucumber.filter.tags="@smoke"
+
+# Enable headless mode
+mvn test -Dheadless=true -Dcucumber.filter.tags="@smoke"
+
+# Using profiles (cleaner)
+mvn test -Pheadless -Dcucumber.filter.tags="@smoke"
+# =============================================================================
+# =============================================================================
+
+
+
 # run using tags
 mvn test -Dcucumber.filter.tags="@calculator"
 mvn test -Dcucumber.filter.tags="@calculator"

@@ -22,6 +22,22 @@ mvn clean test verify -Pdebug -Dcucumber.filter.tags="@smoke"
 
 
 # =============================================================================
+# =============================================================================
+# Run all features (any structure)
+mvn test -Dtest=TestRunner
+
+# Run specific app (if organized by folders)
+mvn test -Dcucumber.options="src/test/resources/features/calculator"
+
+# Run by tags (works with any structure)
+mvn test -Dcucumber.filter.tags="@smoke"
+mvn test -Dcucumber.filter.tags="@calculator and @smoke"
+
+# Run specific feature file
+mvn test -Dcucumber.options="src/test/resources/features/calculator/basic_operations.feature"
+
+
+# =============================================================================
 # Override browser
 mvn test -Dbrowser=safari -Dcucumber.filter.tags="@smoke"
 
